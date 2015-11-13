@@ -20,18 +20,18 @@ class IndexedSet
 {
 public:
   IndexedSet();
-  virtual T& operator[](const int i);
-  virtual T& at(const int i);
-  virtual void clear();
-  virtual int findIndex(const T &value);
-  virtual int add(const T &value);
-  virtual void removeUsingIndex(const int index);
-  virtual void removeUsingValue(const T &value);
-  virtual bool indexHasValue(const int index);
-  virtual int size();
-  virtual int max_size();
-  virtual bool empty();
-  virtual bool full();
+  T& operator[](const int i);
+  T& at(const int i);
+  void clear();
+  int findIndex(const T &value);
+  int add(const T &value);
+  void removeUsingIndex(const int index);
+  void removeUsingValue(const T &value);
+  bool indexHasValue(const int index);
+  int size();
+  int max_size();
+  bool empty();
+  bool full();
 
 private:
   Array<T,max_size_> values_;
