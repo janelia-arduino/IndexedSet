@@ -1,10 +1,10 @@
-#include "Arduino.h"
-#include "Streaming.h"
-#include "Array.h"
-#include "IndexedSet.h"
+#include <Arduino.h>
+#include <Streaming.h>
+#include <Array.h>
+#include <IndexedSet.h>
 
 
-const int BAUDRATE = 9600;
+const long BAUDRATE = 115200;
 
 const int ELEMENT_COUNT_MAX = 10;
 

@@ -7,12 +7,8 @@
 // ----------------------------------------------------------------------------
 #ifndef INDEXED_SET_H
 #define INDEXED_SET_H
-#if defined(ARDUINO) && ARDUINO >= 100
-#include "Arduino.h"
-#else
-#include "WProgram.h"
-#endif
-#include "Array.h"
+#include <Arduino.h>
+#include <Array.h>
 
 
 template <typename T, int max_size_>
@@ -38,6 +34,6 @@ private:
   Array<bool,max_size_> available_;
   int size_;
 };
-#include "IndexedSetDefinitions.h"
+#include "IndexedSet/IndexedSetDefinitions.h"
 
 #endif
