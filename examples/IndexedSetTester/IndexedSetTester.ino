@@ -4,7 +4,7 @@
 #include <IndexedSet.h>
 
 
-const long BAUDRATE = 115200;
+const long BAUD = 115200;
 
 const int ELEMENT_COUNT_MAX = 10;
 
@@ -29,7 +29,7 @@ void printIndexedSet(IndexedSet<IndexedSetType,ELEMENT_COUNT_MAX> indexed_set)
 
 void setup()
 {
-  Serial.begin(BAUDRATE);
+  Serial.begin(BAUD);
   delay(1000);
 
   IndexedSet<IndexedSetType,ELEMENT_COUNT_MAX> indexed_set;
