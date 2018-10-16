@@ -9,14 +9,16 @@
 #define INDEXED_SET_DEFINITIONS_H
 
 
-template <typename T, int max_size_>
+template <typename T,
+  int max_size_>
 IndexedSet<T,max_size_>::IndexedSet()
 {
   clear();
 }
 
-template <typename T, int max_size_>
-T& IndexedSet<T, max_size_>::operator[](const int i)
+template <typename T,
+  int max_size_>
+T& IndexedSet<T,max_size_>::operator[](int i)
 {
   if ((i >= 0) && !available_[i])
   {
@@ -24,8 +26,9 @@ T& IndexedSet<T, max_size_>::operator[](const int i)
   }
 }
 
-template <typename T, int max_size_>
-T& IndexedSet<T, max_size_>::at(const int i)
+template <typename T,
+  int max_size_>
+T& IndexedSet<T,max_size_>::at(int i)
 {
   if ((i >= 0) && !available_[i])
   {
@@ -33,8 +36,9 @@ T& IndexedSet<T, max_size_>::at(const int i)
   }
 }
 
-template <typename T, int max_size_>
-void IndexedSet<T, max_size_>::clear()
+template <typename T,
+  int max_size_>
+void IndexedSet<T,max_size_>::clear()
 {
   size_ = 0;
   for (int i=0;i<max_size_;++i)
@@ -43,8 +47,9 @@ void IndexedSet<T, max_size_>::clear()
   }
 }
 
-template <typename T, int max_size_>
-int IndexedSet<T, max_size_>::findIndex(const T &value)
+template <typename T,
+  int max_size_>
+int IndexedSet<T,max_size_>::findIndex(const T &value)
 {
   bool exists = false;
   int index = -1;
@@ -59,8 +64,9 @@ int IndexedSet<T, max_size_>::findIndex(const T &value)
   return -1;
 }
 
-template <typename T, int max_size_>
-int IndexedSet<T, max_size_>::add(const T &value)
+template <typename T,
+  int max_size_>
+int IndexedSet<T,max_size_>::add(const T &value)
 {
   int index = findIndex(value);
   if (index >= 0)
@@ -86,8 +92,9 @@ int IndexedSet<T, max_size_>::add(const T &value)
   return -1;
 }
 
-template <typename T, int max_size_>
-void IndexedSet<T, max_size_>::removeUsingIndex(const int index)
+template <typename T,
+  int max_size_>
+void IndexedSet<T,max_size_>::removeUsingIndex(int index)
 {
   if (!available_[index])
   {
@@ -96,8 +103,9 @@ void IndexedSet<T, max_size_>::removeUsingIndex(const int index)
   }
 }
 
-template <typename T, int max_size_>
-void IndexedSet<T, max_size_>::removeUsingValue(const T &value)
+template <typename T,
+  int max_size_>
+void IndexedSet<T,max_size_>::removeUsingValue(const T &value)
 {
   int index = findIndex(value);
   if (index >= 0)
@@ -107,32 +115,37 @@ void IndexedSet<T, max_size_>::removeUsingValue(const T &value)
   }
 }
 
-template <typename T, int max_size_>
-bool IndexedSet<T, max_size_>::indexHasValue(const int index)
+template <typename T,
+  int max_size_>
+bool IndexedSet<T,max_size_>::indexHasValue(int index)
 {
   return !available_[index];
 }
 
-template <typename T, int max_size_>
-int IndexedSet<T, max_size_>::size()
+template <typename T,
+  int max_size_>
+int IndexedSet<T,max_size_>::size()
 {
   return size_;
 }
 
-template <typename T, int max_size_>
-int IndexedSet<T, max_size_>::max_size()
+template <typename T,
+  int max_size_>
+int IndexedSet<T,max_size_>::max_size()
 {
   return max_size_;
 }
 
-template <typename T, int max_size_>
-bool IndexedSet<T, max_size_>::empty()
+template <typename T,
+  int max_size_>
+bool IndexedSet<T,max_size_>::empty()
 {
   return size_ == 0;
 }
 
-template <typename T, int max_size_>
-bool IndexedSet<T, max_size_>::full()
+template <typename T,
+  int max_size_>
+bool IndexedSet<T,max_size_>::full()
 {
   return size_ == max_size_;
 }

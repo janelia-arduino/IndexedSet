@@ -11,19 +11,20 @@
 #include <Array.h>
 
 
-template <typename T, int max_size_>
+template <typename T,
+  int max_size_>
 class IndexedSet
 {
 public:
   IndexedSet();
-  T& operator[](const int i);
-  T& at(const int i);
+  T& operator[](int i);
+  T& at(int i);
   void clear();
   int findIndex(const T &value);
   int add(const T &value);
-  void removeUsingIndex(const int index);
+  void removeUsingIndex(int index);
   void removeUsingValue(const T &value);
-  bool indexHasValue(const int index);
+  bool indexHasValue(int index);
   int size();
   int max_size();
   bool empty();
